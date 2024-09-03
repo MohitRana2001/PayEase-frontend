@@ -3,18 +3,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CreditCard, Smartphone, Lock, DollarSign } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroSvg from "../assets/hero.svg";
-import { useEffect } from "react";
 
 export function LandingPage() {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (token) {
-      navigate("/dashboard");
-    }
-  }, [navigate]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-gray-100">
