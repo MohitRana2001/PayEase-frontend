@@ -8,7 +8,7 @@ export const Users = () => {
     const [filter, setFilter] = useState("");
 
     useEffect(() => {
-        axios.get("http://ec2-13-60-99-22.eu-north-1.compute.amazonaws.com:3000/api/v1/user/bulk?filter=" + filter)
+        axios.get("https://payease-backend-1.onrender.com/api/v1/user/bulk?filter=" + filter)
             .then(response => {
                 setUsers(response.data.user);
             });

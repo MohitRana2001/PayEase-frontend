@@ -18,7 +18,7 @@ export const Signin = () => {
   const handleSignInClick = async () => {
     try {
       const response = await axios.post(
-        "http://ec2-13-60-99-22.eu-north-1.compute.amazonaws.com:3000/api/v1/user/signin",
+        "https://payease-backend-1.onrender.com/api/v1/user/signin",
         {
           username: email,
           password: password,

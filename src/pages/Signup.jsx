@@ -73,7 +73,7 @@ export const Signup = () => {
         }} placeholder="123456" label={"Password"} />
         <div className="pt-4">
           <Button onClick={async () => {
-            const response = await axios.post("http://ec2-13-60-99-22.eu-north-1.compute.amazonaws.com:3000/api/v1/user/signup", {
+            const response = await axios.post("https://payease-backend-1.onrender.com/api/v1/user/signup", {
               username,
               firstName,
               lastName,

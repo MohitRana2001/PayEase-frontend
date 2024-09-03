@@ -58,7 +58,7 @@ export const Send = () => {
               <button
                 onClick={async () => {
                   try { await axios.post(
-                    "http://ec2-13-60-99-22.eu-north-1.compute.amazonaws.com:3000/api/v1/account/transfer",
+                    "https://payease-backend-1.onrender.com/api/v1/account/transfer",
                     {
                       to: id,
                       amount,
