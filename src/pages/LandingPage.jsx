@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { CreditCard, Smartphone, Lock, DollarSign } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-
+import heroSvg from "../assets/hero.svg"
 
 export function LandingPage() {
 
@@ -46,7 +46,7 @@ export function LandingPage() {
               <div className="flex items-center justify-center">
                 <Card className="w-full max-w-sm">
                   <CardContent className="p-6">
-                    <img src="/src/assets/hero.svg" alt="Payment App Interface" className="w-full h-2/3 rounded-lg shadow-lg" />
+                    <img src={heroSvg} alt="Payment App Interface" className="w-full h-2/3 rounded-lg shadow-lg" />
                   </CardContent>
                 </Card>
               </div>
