@@ -100,7 +100,7 @@ export const Dashboard = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-white">
+          {/* <Card className="bg-white">
             <CardHeader>
               <CardTitle>Quick Actions</CardTitle>
             </CardHeader>
@@ -110,10 +110,10 @@ export const Dashboard = () => {
                 Request Money
               </Button>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
 
-        <Card className="bg-white mt-8">
+        {/* <Card className="bg-white mt-8">
           <CardHeader>
             <CardTitle>Users</CardTitle>
           </CardHeader>
@@ -129,7 +129,7 @@ export const Dashboard = () => {
               />
             </div>
             <ul className="space-y-4">
-              {filteredUsers.map(user => (
+              {users.map(user => (
                 <li key={user.id} className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
                     <Avatar className="bg-emerald-100 text-emerald-600">
@@ -144,7 +144,8 @@ export const Dashboard = () => {
               ))}
             </ul>
           </CardContent>
-        </Card>
+        </Card> */}
+        <Users />
       </main>
 
       <footer className="bg-white border-t mt-12">
