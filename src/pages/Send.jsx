@@ -1,11 +1,13 @@
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MoveLeft } from "lucide-react";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const Send = () => {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
   const name = searchParams.get("name");
@@ -71,6 +73,7 @@ export const Send = () => {
                   );
 
                   toast.success('Transfer Successful');
+                  {() => {navigate("/dashboard")}}
                 } catch (e) {
                     toast.error('Failed to initiate transfer');
                     console.error(e);
