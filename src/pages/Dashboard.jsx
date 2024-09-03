@@ -59,6 +59,10 @@ export const Dashboard = () => {
         user.name && user.name.toLowerCase().includes(filter.toLowerCase())
     )
 
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/signin");
+    };
 
     return (
         <div>
@@ -80,7 +84,7 @@ export const Dashboard = () => {
             <a href="/about" className="text-gray-600 hover:text-emerald-600">About</a>
             <a href="/contact" className="text-gray-600 hover:text-emerald-600">Contact</a>
             <Button variant="outline" className="text-emerald-600 border-emerald-600">
-              <LogOut className="h-4 w-4 mr-2" />
+              <LogOut className="h-4 w-4 mr-2" onClick={handleLogout} />
               Logout
             </Button>
           </nav>
