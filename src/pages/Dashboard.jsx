@@ -52,13 +52,13 @@ export const Dashboard = () => {
         fetchBalance();
     }, []);
 
-    const filteredUsers = users.filter(user =>
-        user.name.toLowerCase().includes(filter.toLowerCase())
-      )
-
     if(loading) {
         return <div>Loading...</div>
     }
+    const filteredUsers = users.filter(user =>
+        user.name.toLowerCase().includes(filter.toLowerCase())
+    )
+
 
     return (
         <div>
