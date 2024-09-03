@@ -73,7 +73,9 @@ export const Send = () => {
                   );
 
                   toast.success('Transfer Successful');
-                  navigate("/dashboard");
+                  setTimeout(() => {
+                    navigate("/dashboard");
+                  }, 4000);
                 } catch (e) {
                     toast.error('Failed to initiate transfer');
                     console.error(e);
