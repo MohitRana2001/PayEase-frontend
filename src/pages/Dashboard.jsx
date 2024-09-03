@@ -56,7 +56,7 @@ export const Dashboard = () => {
         return <div>Loading...</div>
     }
     const filteredUsers = users.filter(user =>
-        user.name.toLowerCase().includes(filter.toLowerCase())
+        user.name && user.name.toLowerCase().includes(filter.toLowerCase())
     )
 
 
