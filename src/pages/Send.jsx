@@ -73,7 +73,7 @@ export const Send = () => {
                   );
 
                   toast.success('Transfer Successful');
-                  {() => {navigate("/dashboard")}}
+                  () => {navigate("/dashboard")}
                 } catch (e) {
                     toast.error('Failed to initiate transfer');
                     console.error(e);
