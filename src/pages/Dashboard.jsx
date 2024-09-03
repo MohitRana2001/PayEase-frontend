@@ -14,7 +14,7 @@ export const Dashboard = () => {
     useEffect(() => {
         async function fetchBalance() {
             try {
-                const response = await fetch("http://localhost:3000/api/v1/account/balance", {
+                const response = await fetch("http://ec2-13-60-99-22.eu-north-1.compute.amazonaws.com:3000/api/v1/account/balance", {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }

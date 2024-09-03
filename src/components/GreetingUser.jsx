@@ -14,7 +14,7 @@ export default function GreetingUser() {
     useEffect(() => {
         async function fetchUser() {
             try {
-                const response = await fetch(`http://localhost:3000/api/v1/user/bulk?filter=`);
+                const response = await fetch(`http://ec2-13-60-99-22.eu-north-1.compute.amazonaws.com:3000/api/v1/user/bulk?filter=`);
                 const data = await response.json();
 
                 const user = data.user.find(u => u._id === userId);
