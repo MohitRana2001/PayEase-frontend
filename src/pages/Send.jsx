@@ -7,6 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const Send = () => {
+  const apiUrl = import.meta.env.VITE_BACKEND_URL;
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
@@ -60,7 +61,7 @@ export const Send = () => {
               <button
                 onClick={async () => {
                   try { await axios.post(
-                    "https://payease-backend-1.onrender.com/api/v1/account/transfer",
+                    apiUrl +  "/api/v1/account/transfer",
                     {
                       to: id,
                       amount,
@@ -75,7 +76,7 @@ export const Send = () => {
                   toast.success('Transfer Successful');
                   setTimeout(() => {
                     navigate("/dashboard");
-                  }, 4000);
+                  }, 1000);
                 } catch (e) {
                     toast.error('Failed to initiate transfer');
                     console.error(e);

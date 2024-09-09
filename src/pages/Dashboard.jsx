@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from "axios"
 
 export const Dashboard = () => {
-
+    const apiUrl = import.meta.env.VITE_BACKEND_URL;
     const navigate = useNavigate();
     const [ balance , setBalance ] = useState(null);
     const [users, setUsers] = useState([]);
@@ -21,7 +21,7 @@ export const Dashboard = () => {
     const token = localStorage.getItem("token");
 
     useEffect(() => {
-        axios.get("https://payease-backend-1.onrender.com/api/v1/user/bulk?filter=" + filter)
+        axios.get(apiUrl + "/api/v1/user/bulk?filter=" + filter)
             .then(response => {
                 setUsers(response.data.user);
             });
@@ -30,7 +30,7 @@ export const Dashboard = () => {
     useEffect(() => {
         async function fetchBalance() {
             try {
-                const response = await fetch("https://payease-backend-1.onrender.com/api/v1/account/balance", {
+                const response = await fetch(apiUrl + "/api/v1/account/balance", {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }
@@ -55,9 +55,9 @@ export const Dashboard = () => {
     if(loading) {
         return <div>Loading...</div>
     }
-    const filteredUsers = users.filter(user =>
-        user.name && user.name.toLowerCase().includes(filter.toLowerCase())
-    )
+    // const filteredUsers = users.filter(user =>
+    //     user.name && user.name.toLowerCase().includes(filter.toLowerCase())
+    // )
 
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -92,7 +92,7 @@ export const Dashboard = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Hello, <span className="text-emerald-600">GUEST</span></h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">Hello, <span className="text-emerald-600">{users.firstName}</span></h1>
 
         <div className="grid gap-8 md:grid-cols-2 mb-2">
           <Card className="bg-white">

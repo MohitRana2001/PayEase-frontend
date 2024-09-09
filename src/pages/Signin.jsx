@@ -10,6 +10,7 @@ import { CreditCard } from "lucide-react";
 import { Button as Butt} from '@/components/ui/button'
 
 export const Signin = () => {
+  const apiUrl = import.meta.env.VITE_BACKEND_URL;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -18,7 +19,7 @@ export const Signin = () => {
   const handleSignInClick = async () => {
     try {
       const response = await axios.post(
-        "https://payease-backend-1.onrender.com/api/v1/user/signin",
+        apiUrl +  "/api/v1/user/signin",
         {
           username: email,
           password: password,
@@ -89,6 +90,7 @@ export const Signin = () => {
               <InputBox
                 placeholder="123456"
                 label={"Password"}
+                type="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
               {error && <div className="text-red-500">{error}</div>}

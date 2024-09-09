@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 export const Users = () => {
     const [users, setUsers] = useState([]);
     const [filter, setFilter] = useState("");
-
+    const apiUrl = import.meta.env.VITE_BACKEND_URL;
+    
     useEffect(() => {
-        axios.get("https://payease-backend-1.onrender.com/api/v1/user/bulk?filter=" + filter)
+        axios.get(apiUrl + "/api/v1/user/bulk?filter=" + filter)
             .then(response => {
                 setUsers(response.data.user);
             });

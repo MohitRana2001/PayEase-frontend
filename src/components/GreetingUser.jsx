@@ -14,7 +14,7 @@ export default function GreetingUser() {
     useEffect(() => {
         async function fetchUser() {
             try {
-                const response = await fetch(`https://payease-backend-1.onrender.com/api/v1/user/bulk?filter=`);
+                const response = await fetch( import.meta.env.REACT_APP_BACKEND_URL + `/api/v1/user/bulk?filter=`);
                 const data = await response.json();
 
                 const user = data.user.find(u => u._id === userId);
