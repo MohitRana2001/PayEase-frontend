@@ -8,5 +8,8 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  }
-})
+  },
+  define : {
+    _APP_ENV_: process.env.VITE_BACKEND_URL,
+  },
+});
