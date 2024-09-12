@@ -10,6 +10,6 @@ export default defineConfig({
     },
   },
   define : {
-    _APP_ENV_: process.env.VITE_BACKEND_URL,
+    'process.env.VITE_BACKEND_URL': JSON.stringify(process.env.VITE_BACKEND_URL),
   },
 });
